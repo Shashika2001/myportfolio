@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <div className='navbar '> 
 
-      <div  className='bg-cyan-950 flex justify-between items-center max-w-6xl mx-auto p-3'>
+<div className="bg-cyan-950 flex justify-between items-center max-w-6xl mx-auto p-3">
       <ul className="text-white flex gap-4">
         <Link to='/'><li>Dashboard</li></Link>
         <Link to='/about'><li>About me</li></Link>
