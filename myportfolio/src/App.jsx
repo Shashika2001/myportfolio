@@ -11,12 +11,12 @@ export default function App() {
     <div>
    
       <BrowserRouter>
-      <Navbar />
+      <Navbar />  
       <Routes>
-        <Route path="/" exact component={Dashboard} />
-        <Route path="/about" component={Aboutme} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/projects" component={Projects} />
+        <Route path="/"  element={<Dashboard/>} />
+        <Route path="/about" element={<Aboutme/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/projects" element={<Projects/>} />
       </Routes>
       
       </BrowserRouter>
