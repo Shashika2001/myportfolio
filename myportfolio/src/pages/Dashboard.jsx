@@ -1,50 +1,74 @@
 import React from 'react';
 import image01 from '../assets/image01.jpg';
+import { useNavigate } from 'react-router-dom';
 
 export default function Dashboard() {
-  const containerStyle = {
-    display: 'flex',       // Makes the container a flexbox
-    alignItems: 'center',  // Vertically align the image-text block and right-side text
-    gap: '20px',           // Add space between the image-text block and right-side text
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    navigate('/projects');
   };
 
-  const imageTextContainerStyle = {
-    display: 'flex',       // Makes the image and its text block a flex column
-    flexDirection: 'column', // Arrange items vertically (image and text under it)
-    alignItems: 'center',  // Center align the image and its text
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column', // Arrange everything vertically
+    alignItems: 'center',    // Center align all items horizontally
+    gap: '20px',             // Add space between items
+    textAlign: 'center',     // Center-align text content
+    marginTop: '50px',       // Add some margin from the top
   };
 
   const imageStyle = {
-    width: '150px',        // Set the width of the image
-    height: '150px',       // Set the height of the image
-    borderRadius: '50%',   // This makes the image rounded
-    objectFit: 'cover',    // Ensures the image covers the area without distortion
-  };
-
-  const textStyle = {
-    fontSize: '1.5rem',     // Font size of the right-side text
-    fontWeight: 'bold',     // Makes the text bold
+    width: '150px',
+    height: '150px',
+    borderRadius: '50%',
+    objectFit: 'cover',
   };
 
   const belowImageTextStyle = {
-    marginTop: '10px',      // Add spacing between the image and text below it
-    fontSize: '1rem',       // Font size for the text under the image
-    color: '#555',          // Set a subtle color for the text
+    marginTop: '10px',
+    fontSize: '3rem',
+    color: '#555',
+    fontWeight: 'bold',
+    
+  };
+
+  const descriptionStyle = {
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    marginTop: '20px', // Add spacing between sections
+  };
+
+  const buttonStyle = {
+    backgroundColor: '#06b6d4', // Tailwind's cyan-500
+    color: 'white',
+    padding: '10px 20px',
+    borderRadius: '8px',
+    marginTop: '15px',
+    border: 'none',
+    cursor: 'pointer',
   };
 
   return (
     <div style={containerStyle}>
-      {/* Image and Text under the image */}
-      <div style={imageTextContainerStyle}>
-        <img src={image01} alt="Profile" style={imageStyle} />
-        <p style={belowImageTextStyle}>Hello, I'm Shashika!</p>
-       
-      </div>
+      {/* Image */}
+      <img src={image01} alt="Profile" style={imageStyle} />
 
-      {/* Text on the right side */}
-      <div style={textStyle}>
+      {/* Text below the image */}
+      <p style={belowImageTextStyle}>Hello, I'm Shashika!</p>
+
+      {/* Description */}
+      <div style={descriptionStyle}>
         <h1>Welcome to my portfolio</h1>
         <p>Explore my work and projects.</p>
+      </div>
+
+      {/* Projects Section */}
+      <div>
+        <h2 style={{ fontWeight: '600' }}>My Projects</h2>
+        <p>Here are some of the projects I have worked on.</p>
+        <button onClick={handleNavigation} style={buttonStyle}>
+          View Projects
+        </button>
       </div>
     </div>
   );
