@@ -1,23 +1,31 @@
 import React from 'react';
 import image01 from '../assets/image01.jpg';
 import { useNavigate } from 'react-router-dom';
+import { useSpring, animated } from '@react-spring/web';
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const handleNavigation = () => {
     navigate('/projects');
   };
+  const styles = useSpring({
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0)' },
+    config: { duration: 1000 },
+  });
 
   const containerStyle = {
+    minHeight: '100vh',       // Ensure full viewport height
     display: 'flex',
     flexDirection: 'column', // Arrange everything vertically
     alignItems: 'center',    // Center align all items horizontally
     gap: '20px',             // Add space between items
     textAlign: 'center',     // Center-align text content
-    marginTop: '50px',       // Add some margin from the top
+           // Add some margin from the top
   };
 
   const imageStyle = {
+    marginTop: '20px', // Add some margin from the top
     width: '150px',
     height: '150px',
     borderRadius: '50%',
@@ -27,8 +35,11 @@ export default function Dashboard() {
   const belowImageTextStyle = {
     marginTop: '10px',
     fontSize: '3rem',
-    color: '#555',
+    color: 'gray',
     fontWeight: 'bold',
+    border: '4px solid #06b6d4',
+    padding: '10px',
+    borderRadius: '8px',
     
   };
 
@@ -49,16 +60,19 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={containerStyle}>
+    <div className='bg-gradient-to-r from-black to-light-blue-500'>
+    <div style={containerStyle} >
       {/* Image */}
       <img src={image01} alt="Profile" style={imageStyle} />
 
       {/* Text below the image */}
+      <animated.div style={styles}>
       <p style={belowImageTextStyle}>Hello, I'm Shashika!</p>
+      </animated.div>
 
       {/* Description */}
       <div style={descriptionStyle}>
-        <h1>Welcome to my portfolio</h1>
+        <h2 style={styles}>Welcome to my portfolio</h2>
         <p>Explore my work and projects.</p>
       </div>
 
@@ -70,6 +84,7 @@ export default function Dashboard() {
           View Projects
         </button>
       </div>
+    </div>
     </div>
   );
 }

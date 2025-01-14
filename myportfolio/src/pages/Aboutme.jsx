@@ -41,7 +41,8 @@ export default function AboutMe() {
 
   return (
     
-    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+    <div className='bg-gradient-to-r from-black to-light-blue-500'
+    style={{ padding: '20px', maxWidth: '', margin: '0 auto', textAlign: 'center' }}>
       {/* Profile Picture */}
       <img src={profileImage} alt="Profile" style={imageStyle} />
       
