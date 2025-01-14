@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 
+
+
 export default function Navbar() {
+  
   return (
-    <div className='navbar '> 
+    <div className='navbar '>
+        
 
 <div className="bg-cyan-950 flex justify-between items-center  mx-auto p-3">
       <ul className="text-white flex gap-4">
