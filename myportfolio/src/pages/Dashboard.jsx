@@ -60,7 +60,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className='bg-gradient-to-r from-black to-light-blue-500'>
+    <div className='bg-blend-color-burn'>
     <div style={containerStyle} >
       {/* Image */}
       <img src={image01} alt="Profile" style={imageStyle} />
