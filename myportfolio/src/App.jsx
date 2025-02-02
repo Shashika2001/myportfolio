@@ -37,11 +37,7 @@ export default function App() {
 
   return (
     <div style={appStyle}>
-      {/* Dark Mode Toggle Button */}
-      <button onClick={toggleDarkMode} style={buttonStyle}>
-        {isDarkMode ? <FaSun /> : <FaMoon />}
-      </button>
-
+      
       {/* Routes and Navbar */}
       <BrowserRouter>
         <Navbar />
