@@ -11,6 +11,12 @@ const projects = [
       title: "Adhyana-Learning Management System",
       description: "Java,MySQL,HTML,CSS,JS",
     },
+    {
+      title: "Highway Bus seat Booking System",
+      description: "flutter,firebase",
+    },
+     
+    
     
 ];
 
