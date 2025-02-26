@@ -15,7 +15,10 @@ const projects = [
       title: "Highway Bus seat Booking System",
       description: "flutter,firebase",
     },
-     
+    {
+      title: "Highway Bus seat Booking System",
+      description: "flutter,firebase",
+    },
     
     
 ];
